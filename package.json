@@ -1,0 +1,53 @@
+{
+  "name": "survey_tool",
+  "description": "User survey tool, with new user collection database, and results breakdown.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/paulbrady/survey_tool",
+  "author": {
+    "name": "Paul Brady",
+    "email": "pablo.brady@gmail.com",
+    "url": "www.pbrady.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paulbrady/survey_tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/paulbrady/survey_tool/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/paulbrady/survey_tool/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/survey_tool",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-concurrent": "^2.3.0",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-serve": "^0.1.6",
+    "grunt-shell-spawn": "^0.3.10"
+  },
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.1",
+    "debug": "~2.2.0",
+    "express": "~4.12.4",
+    "jade": "~1.9.2",
+    "mongodb": "^1.4.4",
+    "monk": "^1.0.1",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0"
+  }
+}

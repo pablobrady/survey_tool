@@ -1,0 +1,6 @@
+ps -A | grep "mongod --dbpath"
+
+echo "Grab the process ID from the first line (and first number) above."
+echo "ENTER:  kill 9999"
+echo "(Also, be sure to refresh the browser.)"
+
