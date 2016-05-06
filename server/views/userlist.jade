@@ -1,9 +1,19 @@
-extends layout
+extends includes/layout
 
 block content
-  h1.
-    User List
-  ul
-    each user, i in userlist
-      li= i+1 + " "
-        a(href="mailto:#{user.email}")= user.username + " " + " - in MongoDB ./data"
+  h1= title
+  p= headerTagline
+  br
+
+  // Wrapper
+  #wrapper
+    ul
+      each user, i in userlist
+        li= i+1 + " "
+          a(href="mailto:#{user.email}")= user.username + " " + " - in MongoDB ./data"
+
+  // /WRAPPER
+  footer 
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/js/global.js')
+    script(src='/js/survey_tool_admin.js')

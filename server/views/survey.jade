@@ -1,0 +1,27 @@
+extends includes/layout
+
+block content
+  h1= title
+  p= headerTagline
+  p= paragraph1Text
+  p= paragraph2Text
+  br
+
+  // Wrapper
+  #wrapper
+ 
+    // DIV ANSWERS
+    h2 Survey Answer Num
+    div#divAnswers
+      div#answerA= answerAText
+      div#answerB= answerBText
+      div#answerC= answerCText
+      div#answerD= answerDText
+      button#btnAnswer Submit Answer
+    // /DIV ANSWERS
+
+  // /WRAPPER
+
+  footer 
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/js/global.js')

@@ -1,7 +1,7 @@
 body {
   padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: transparent;
+  background-color: lightgreen;
 }
 
 h2 {
@@ -15,6 +15,10 @@ a {
 #wrapper {
   padding-left:312px;
   position:relative;
+}
+
+#errorMsg {
+  min-height: 1.3em;
 }
 
 #userList {
