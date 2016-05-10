@@ -4,7 +4,7 @@ var validator = require('validator');
 
 var isValidUserInput = function(inputStr) {
   if( inputStr === '' ) { return false; }
-  var re = /[\[\]\(\)<>&\;#$%^&*\'\"]/; // Should match .match(/xxx/) on client side
+  var re = /[\[\]\(\)<>&\;#$%^&*\"]/; // Should match .match(/xxx/) on client side
   var invalidCharsArray = inputStr.match(re);
   if( invalidCharsArray===null ) { return true; }
 
@@ -50,7 +50,8 @@ router.post('/adduser', function(req, res) {
       !isValidUserInput(req.body.company) ||
       !isValidUserInput(req.body.country) ) { 
 
-    validationErrMsg = 'You have entered restricted characters.';
+    validationErrMsg = 'Validation-Failed';
+    console.log("ERROR:  New user rejected by server.");
     res.send(
       { msg: validationErrMsg }
     );

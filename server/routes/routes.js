@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 router.get('/survey', function(req, res, next) {
 	console.log('ROUTES.JS /survey');
 	var db = req.db;
-	var collection = db.get('st_collection');
+	var collection = db.get( process.env.SURVEY_TOOL_DB_NAME );
 	collection.find({},{},function(e,docs){
 		console.log("docs=" + docs);
 		res.render('survey', { 
@@ -40,7 +40,7 @@ router.get('/survey', function(req, res, next) {
 router.get('/admin', function(req, res) {
 	console.log('ROUTES.JS /admin');
 	var db = req.db;
-	var collection = db.get('st_collection');
+	var collection = db.get( process.env.SURVEY_TOOL_DB_NAME );
 	collection.find({},{},function(e,docs){
 		res.render('userlist', {
 			'userlist' : docs,
@@ -57,7 +57,7 @@ router.get('/admin', function(req, res) {
 // router.get('/userlist', function(req, res) {
 // 	console.log('ROUTES.JS /userlist');
 // 	var db = req.db;
-// 	var collection = db.get('st_collection');
+// 	var collection = db.get( process.env.SURVEY_TOOL_DB_NAME );
 // 	collection.find({},{},function(e,docs){
 // 		res.render('userlist', {
 // 			'userlist' : docs,
@@ -89,7 +89,7 @@ router.get('/admin', function(req, res) {
 // 		var userEmail = req.body.useremail;
 
 // 		// Set our collection
-// 		var collection = db.get('st_collection');
+// 		var collection = db.get( process.env.SURVEY_TOOL_DB_NAME );
 
 // 		// Submit to the DB
 // 		collection.insert({

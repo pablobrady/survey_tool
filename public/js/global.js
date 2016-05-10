@@ -26,7 +26,7 @@ window.userDataTool = {
 		$('#addUser input').each(function(index, val) {
 console.log("$(this).val() = " + $(this).val());
 			if( $(this).val() === '' ) { validationErrorNum = window.validateErrors.EMPTY_STRING; }
-			if( $(this).val().match(/[\[\]\(\)<>&\;@#$%^&*\'\"]/) ) { window.validateErrors.INVALID_STRING; }
+			if( $(this).val().match(/[\[\]\(\)<>&\;@#$%^&*\"]/) ) { window.validateErrors.INVALID_STRING; }
 		});
 
 		// Check and make sure validationErrorNum's still at zero
@@ -54,11 +54,11 @@ console.log("$(this).val() = " + $(this).val());
 				if( response.msg === '' ) {
 					$('#addUser fieldset input').val(''); // Clears ALL INPUTs, regardless of #id
 
-					// Successful!  On to the next page...
-					window.location.href = '/survey';
+					// Successful!  On to the next page... (Pass a session id???)
+					// window.location.href = '/survey';
 
 				} else {
-					var eMsg = response.msg || 'You have entered invalid input.'
+					var eMsg = 'You have entered invalid input. (Rejected by server.)'
 					$('#errorMsg').html(eMsg + ' ');
 
 				}

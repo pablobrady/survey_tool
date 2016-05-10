@@ -36,28 +36,18 @@ module.exports = function(grunt) {
       },
     },
     shell: {
-      mongodb: {
-        command: 'mongod --dbpath ./data',
-        options: {
-            async: false
-        }
-      },
       npmstart: {
         command: 'npm start',
         options: {
             async: false
         }
       },
-      killmongodb: {
-        command: './STOP-MONGO'
-          // command: 'mongod --shutdown' // non-functional, removed from Exec.
-      }
     },
     concurrent: {
       options: {
         logConcurrentOutput: true
       },
-      dev: ['shell:mongodb', 'shell:npmstart'],
+      dev: ['shell:npmstart'],
     }
   });
 
@@ -86,9 +76,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'nodeunit', 'concurrent:dev']);
-
-  // Shutdown background MongoDB - aka. Error:  Addresss already in use for socket 0.0.0.0:27017
-  grunt.registerTask('stop', ['shell:killmongodb']);
 
   // Just start the server (only)
   grunt.registerTask('serve', ['shell:npmstart']);

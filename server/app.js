@@ -1,5 +1,3 @@
-// survey_tool - app.js for node
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -10,7 +8,11 @@ var bodyParser = require('body-parser');
 // Mongo/Monk Database
 var mongo = require('mongodb');
 var monk  = require('monk');
-var db = monk('localhost:27017/st_collection');
+
+// Remote Mongo Database
+var db = monk('mongodb://' + process.env.SURVEY_TOOL_DB_LOGIN +
+              ':' + process.env.SURVEY_TOOL_DB_PASS + 
+              '@ds053794.mlab.com:53794/' + process.env.SURVEY_TOOL_DB_NAME );
 
 var routes = require('./routes/routes'); // /server/routes/routes.js - Routes master
 var users = require('./routes/users');   // /server/routes/user.js   - User DB access

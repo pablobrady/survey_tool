@@ -1,4 +1,5 @@
-# survey_tool [![Build Status](https://secure.travis-ci.org/paulbrady/survey_tool.png?branch=master)](http://travis-ci.org/paulbrady/survey_tool)
+# survey_tool 
+[comment]: <> ( [![Build Status](https://secure.travis-ci.org/paulbrady/survey_tool.png?branch=master)](http://travis-ci.org/paulbrady/survey_tool) )
 
 User survey tool, with new user collection database, and results breakdown.
 
